@@ -1,0 +1,10 @@
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\RegexParser\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\RegexParser\bin\Debug\RegexParser.dll
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\RegexParser\bin\Debug\RegexParser.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\RegexParser\obj\Debug\RegexParser.dll
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\RegexParser\obj\Debug\RegexParser.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\bin\Debug\RegexParser.dll
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\bin\Debug\RegexParser.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\obj\Debug\RegexParser.dll
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\obj\Debug\RegexParser.pdb

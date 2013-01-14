@@ -1,0 +1,14 @@
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\bin\Debug\MathParserFunReg.exe
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\bin\Debug\MathParserFunReg.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\obj\x86\Debug\MathParserFunReg.exe
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\obj\x86\Debug\MathParserFunReg.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\bin\Debug\RegexParser.dll
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\MathParserFunReg\MathParserFunReg\bin\Debug\RegexParser.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\MathParserFunReg.exe
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\MathParserFunReg.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathParserFunReg.exe
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathParserFunReg.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\RegexParser.dll
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\RegexParser.pdb
+C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\ResolveAssemblyReference.cache
