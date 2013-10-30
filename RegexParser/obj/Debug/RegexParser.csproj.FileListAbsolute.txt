@@ -17,3 +17,4 @@ C:\Users\David\Dropbox\VS Projects\RegexParser\RegexParser\bin\Debug\RegexParser
 C:\Users\David\Dropbox\VS Projects\RegexParser\RegexParser\bin\Debug\RegexParser.pdb
 C:\Users\David\Dropbox\VS Projects\RegexParser\RegexParser\obj\Debug\RegexParser.dll
 C:\Users\David\Dropbox\VS Projects\RegexParser\RegexParser\obj\Debug\RegexParser.pdb
+C:\Users\David\Dropbox\VS Projects\RegexParser\RegexParser\obj\Debug\RegexParser.csprojResolveAssemblyReference.cache

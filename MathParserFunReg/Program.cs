@@ -54,7 +54,6 @@ namespace MathParserFunReg
 			 * CALCULATOR CODE
 			 ******************************/
 			
-			double XVal = 5;
 			double ANGLE_MULT = GetMult(Mode);
 
 			Stopwatch parse = new Stopwatch(), solve = new Stopwatch();
@@ -94,6 +93,10 @@ namespace MathParserFunReg
 				1,4,"ATAN({0})",@"atan\((.+)\)")
 			,new Function(d => Vec(d.Select(i => Math.Sqrt(D(i) * ANGLE_MULT)).ToArray()),
 				1,4,"SQRT({0})",@"sqrt\((.+)\)")
+			,new Function(d => { Variable.SetVariable(d[0].ToString(), d[1]); return null;},
+				2, 4, "{{{0}}} set to {1}", @"set\((\w+)=(.+)\)")
+			,new Function(d => {Variable.ClearVariables(); return null;},
+				0, 4, "Variables Cleared", "clear")
 				//CONSTANTS
 			,new Function(d => DefineConstant(Math.PI),0,5,"PI","pi")
 				//SETTINSG
@@ -119,12 +122,11 @@ namespace MathParserFunReg
 				Console.WriteLine(f.GetPrintFormat, 'a','b','c');
 			Console.WriteLine();
 			Console.WriteLine("Please input a math function of some sort");
-			
+
+			Function.FLAGAssumeStrayString = true;
 			Function.RegConstant = new Function(v => double.Parse(v[0].ToString()), 0, int.MaxValue, "{0}", @"((?:\d+\.?\d*?)|(?:\d*\.?\d+))");
 			double junkDoub;
-			Constant.sIsActuallyConstant = (s) => double.TryParse(s, out junkDoub) ? null : "#ERROR";
-			Variable.CreateNewVariable('x');
-			Console.WriteLine("(x = " + XVal + ")");
+			Constant.sIsActuallyConstant = (s) => double.TryParse(s, out junkDoub) ? null : s;
 			
 			do
 			{
@@ -138,9 +140,9 @@ namespace MathParserFunReg
 				{
 					Console.WriteLine("Which equals:");
 					solve.Restart();
-					var ans = Result.Solve(XVal);
+					var ans = Result.Solve();
 					solve.Stop();
-					Console.WriteLine(ans.ToString());
+					Console.WriteLine((ans ?? "No response").ToString());
 					Console.WriteLine("Parse time: {0} ({1} ms)\t\t\tSolve time: {2} ({3} ms)",
 						parse.ElapsedTicks, parse.ElapsedMilliseconds, solve.ElapsedTicks, solve.ElapsedMilliseconds);
 				}

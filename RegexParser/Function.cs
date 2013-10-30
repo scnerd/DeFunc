@@ -109,7 +109,9 @@ namespace RegexParser
 			//
 			//TODO: Initialize Variables regex
 			//
-			RegVariable = new Function(null, 0,int.MaxValue,"{0}",string.Join("|",Variable.GetVars.Select(v => v.ToString()).ToArray()));
+			//RegVariable = new Function(null, 0,int.MaxValue,"{0}",string.Join("|",Variable.GetVars.Select(v => v.ToString()).ToArray()));
+			if (RegVariable == null)
+				RegVariable = new Function((o) => null, 1, int.MaxValue, "", "");
 
 			//
 			//Group Functions by their order of operation (descending order)
@@ -156,7 +158,7 @@ namespace RegexParser
 			//If you got here, then no provided function matches the given input
 			if(RegVariable.mSearchPattern.Match(Input).Value == Input)
 			{
-				return new Variable(char.ToLower(Input[0]));
+				return Variable.sVariables[Input];
 			}
 			if(FLAGAssumeStrayString || RegConstant.mSearchPattern.Match(Input).Value == Input)
 			{

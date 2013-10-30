@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace RegexParser
 {
@@ -10,66 +11,51 @@ namespace RegexParser
 	 */
 	public class Variable : FuncInst
 	{
-		internal readonly static List<Variable> sVars = new List<Variable>();
+		internal static Dictionary<string, FuncInst> sVariables = new Dictionary<string, FuncInst>();
+		private static Dictionary<FuncInst, object> sValues = new Dictionary<FuncInst, object>();
 		private char mc;
-		
-		public Variable(char c) : this(c, false)
+
+		private Variable(string Name) : base(Function.RegVariable, new FuncInst[0])
+		{}
+
+		private static void ResetRegVariable()
 		{
-			if(!sVars.Select(v => (char)v).Contains(c))
-				throw new InvalidOperationException(
-					"To create a variable, first register the variable using the \"CreateNewVariable\" function");
-		}
-		
-		private Variable(char c, bool isNew = true) : base(
-			Function.RegVariable,
-			new FuncInst[0])
-		{
-			mc = c;
-			if(isNew)
-			{
-				sVars.Add(this);
-				Function.RegVariable = new Function(
-					v => 0,
-					0, int.MaxValue, "{0}",
-					"(" + String.Join ("|",sVars.Select(v => (char)v)) + ")");
-			}
+			Function.RegVariable = new Function(
+				v => sValues[sVariables[v[0].ToString()]],
+				1,
+				int.MaxValue,
+				" {0} ",
+				'(' + string.Join("|", sVariables.Keys) + ')');
 		}
 		
 		public override object Solve (params object[] Variables)
 		{
-			return Variables[sVars.Select(v => (char)v).ToList().IndexOf(this.mc)];
+			return sValues[this];
 		}
 
-		public static void CreateNewVariable(char c)
+		public static void SetVariable(string Name, object Value)
 		{
-			new Variable(char.ToLower(c), true);
+			if (!sVariables.Keys.Contains(Name))
+			{
+				sVariables.Add(Name, new Variable(Name));
+				sValues.Add(sVariables[Name], Value);
+			}
+			else
+			{
+				sValues[sVariables[Name]] = Value;
+			}
+			ResetRegVariable();
 		}
 
-		public static void RemoveVariable(char c)
+		public static void ClearVariables()
 		{
-			sVars.RemoveAll(v => (char)v == c);
+			sVariables = new Dictionary<string, FuncInst>();
+			sValues = new Dictionary<FuncInst, object>();
 		}
-
-		public static implicit operator Variable(char c)
-		{ return sVars.First(v => (char)v == c); }
-
-		public static explicit operator char(Variable v)
-		{ return v.mc; }
-
-		internal static Variable Find(char c)
-		{
-			return sVars[sVars.Cast<char>().ToList<char>().IndexOf(c)];
-		}
-
-		public static Variable[] GetVars
-		{ get { return sVars.ToArray(); } }
-
-		public static int GetVarIndex(char c)
-		{ return sVars.FindIndex(v => (char)v == c); }
 
 		public override string ToString()
 		{
-			return mc.ToString();
+			return sVariables.First(k => k.Value == this).Key;
 		}
 	}
 }
