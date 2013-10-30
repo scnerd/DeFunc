@@ -12,3 +12,13 @@ C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\
 C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\RegexParser.dll
 C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\RegexParser.pdb
 C:\Users\SCNerd\Desktop\David Backup 8-26-10\My Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\MathParserFunReg.exe
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\MathParserFunReg.pdb
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathParserFunReg.exe
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathParserFunReg.pdb
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\RegexParser.dll
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\RegexParser.pdb
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\obj\x86\Debug\MathParserFunReg.csprojResolveAssemblyReference.cache
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathNet.Numerics.dll
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathNet.Numerics.pdb
+C:\Users\David\Dropbox\VS Projects\RegexParser\MathParserFunReg\bin\Debug\MathNet.Numerics.xml

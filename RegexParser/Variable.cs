@@ -5,34 +5,71 @@ using System.Text;
 
 namespace RegexParser
 {
-    /*
-     * This just helps with support for variables
-     */
-    public class Variable
-    {
-        private static List<Variable> sVars = new List<Variable>();
-        private char mc;
+	/*
+	 * This just helps with support for variables
+	 */
+	public class Variable : FuncInst
+	{
+		internal readonly static List<Variable> sVars = new List<Variable>();
+		private char mc;
+		
+		public Variable(char c) : this(c, false)
+		{
+			if(!sVars.Select(v => (char)v).Contains(c))
+				throw new InvalidOperationException(
+					"To create a variable, first register the variable using the \"CreateNewVariable\" function");
+		}
+		
+		private Variable(char c, bool isNew = true) : base(
+			Function.RegVariable,
+			new FuncInst[0])
+		{
+			mc = c;
+			if(isNew)
+			{
+				sVars.Add(this);
+				Function.RegVariable = new Function(
+					v => 0,
+					0, int.MaxValue, "{0}",
+					"(" + String.Join ("|",sVars.Select(v => (char)v)) + ")");
+			}
+		}
+		
+		public override object Solve (params object[] Variables)
+		{
+			return Variables[sVars.Select(v => (char)v).ToList().IndexOf(this.mc)];
+		}
 
-        private Variable(char c)
-        { mc = c; sVars.Add(this); }
+		public static void CreateNewVariable(char c)
+		{
+			new Variable(char.ToLower(c), true);
+		}
 
-        public static implicit operator Variable(char c)
-        { return new Variable(c); }
+		public static void RemoveVariable(char c)
+		{
+			sVars.RemoveAll(v => (char)v == c);
+		}
 
-        public static explicit operator char(Variable v)
-        { return v.mc; }
+		public static implicit operator Variable(char c)
+		{ return sVars.First(v => (char)v == c); }
 
-        internal static Variable Find(char c)
-        {
-            return sVars[sVars.Cast<char>().ToList<char>().IndexOf(c)];
-        }
+		public static explicit operator char(Variable v)
+		{ return v.mc; }
 
-        public static Variable[] GetVars
-        { get { return sVars.ToArray(); } }
+		internal static Variable Find(char c)
+		{
+			return sVars[sVars.Cast<char>().ToList<char>().IndexOf(c)];
+		}
 
-        public override string ToString()
-        {
-            return mc.ToString();
-        }
-    }
+		public static Variable[] GetVars
+		{ get { return sVars.ToArray(); } }
+
+		public static int GetVarIndex(char c)
+		{ return sVars.FindIndex(v => (char)v == c); }
+
+		public override string ToString()
+		{
+			return mc.ToString();
+		}
+	}
 }

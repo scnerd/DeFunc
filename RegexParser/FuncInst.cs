@@ -16,12 +16,12 @@ namespace RegexParser
             mParams = Params;
         }
 
-        public virtual object Solve()
+        public virtual object Solve(params object[] Variables)
         {
             object[] ps = new object[mType.InputCount];
             for (int i = 0; i < mType.InputCount; i++)
             {
-                ps[i] = mParams[i].Solve();
+                ps[i] = mParams[i].Solve(Variables);
             }
             return this.mType.Solve(ps);
         }
@@ -32,50 +32,4 @@ namespace RegexParser
         }
     }
 
-    //****************************************************************************************************
-
-    public class FuncInstConst : FuncInst
-    {
-        private object mVal;
-        public FuncInstConst(object value)
-            : base(Function.RegConstantDouble, null)
-        {
-            mVal = value;
-        }
-
-        public override object Solve()
-        {
-            return mVal;
-        }
-
-        public override string ToString()
-        {
-            return mVal.ToString();
-        }
-    }
-
-    //****************************************************************************************************
-
-    public class FuncInstVar : FuncInst
-    {
-        private Variable mVal;
-        public FuncInstVar(Variable value)
-            : base(Function.RegConstantDouble, null)
-        {
-            mVal = value;
-        }
-
-        public override object Solve()
-        {
-            //
-            //TODO: NEED TO SUPPORT VARIABLE
-            //
-            return 1d;
-        }
-
-        public override string ToString()
-        {
-            return ((char)mVal).ToString();
-        }
-    }
 }

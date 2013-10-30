@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MathParserFunReg/Program.cs">
+    <Files>
+      <File FileName="RegexParser/FuncInst.cs" Line="26" Column="1" />
+      <File FileName="RegexParser/Variable.cs" Line="37" Column="3" />
+      <File FileName="RegexParser/Function.cs" Line="42" Column="15" />
+      <File FileName="RegexParser/Constant.cs" Line="23" Column="21" />
+      <File FileName="MathParserFunReg/Program.cs" Line="70" Column="18" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="MathParserFunReg" expanded="True">
+            <Node name="Program.cs" selected="True" />
+          </Node>
+          <Node name="RegexParser" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
